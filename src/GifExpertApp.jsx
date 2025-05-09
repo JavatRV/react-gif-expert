@@ -13,7 +13,7 @@ const GifExpertApp = () => {
 
         setCategories([ ...categories, newcategory ])
 
-        }
+    }
 
   return (
     <>

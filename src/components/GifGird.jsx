@@ -9,23 +9,23 @@ export const GifGrid = ({ category }) => {
 
     const { images, isLoading } = useFetchGifs(category)
 
-    console.log(images, isLoading)
-
     return (
         <>
             <h3>{ category }</h3>
 
             {
-                isLoading && ( <h2 className="">Cargando...</h2>)
+                isLoading && ( <h2 className="">Loading...</h2>)
             }
 
             <div className="card-grid">
             {
                 images.map( (image) => (
-                    //forma tradicional
+                    //forma tradicional una a una
                     // <GifItem key={ id } 
                     // title={title} url={url} 
                     // />
+                    // Desestructura y pasa todas las propiedades del objeto 
+                    // image como props al componente GifItem
                     <GifItem key={ image.id } 
                     {...image} 
                     />
